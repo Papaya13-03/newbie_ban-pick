@@ -25,7 +25,7 @@ function showCharacterList() {
     characterListData.forEach((val,index)=>{
         characterList.innerHTML += (`
             <div class="character" vision="${val.vision}">
-                <img src="/imgs/square/${val.name}.png" alt="character">
+                <img src="./imgs/square/${val.name}.png" alt="character">
             </div>
         `);
     })
