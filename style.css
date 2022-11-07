@@ -1,0 +1,263 @@
+:root {
+    --Cryo : rgb(191, 225, 240);
+    --Electro:rgb(108, 50, 135);
+    --Anemo:rgb(58, 156, 130);
+    --Geo:rgb(192, 148, 35);
+    --Hydro:rgb(33, 123, 207);
+    --Pyro:rgb(205, 120, 101);
+    --Dendro:rgb(144,188,78);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    background-color:aqua ;
+}
+
+#header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid;
+    background:linear-gradient(to right,rgb(0, 98, 255) ,rgb(187, 210, 230) ,rgb(0, 98, 255));
+}
+
+.team_name ,
+.count_down {
+    color: #fff;
+    font-size: 30px; 
+    font-family: sans-serif;
+    line-height: 80px;
+    font-weight: 700;
+    height: 80px;
+    width: 400px;
+    text-align: center;
+}
+
+.count_down {
+    color: rgb(0, 149, 255);
+    font-size: 50px;
+    font-weight: 1000;
+    text-shadow: 0 0 3px #000;
+}
+
+
+#main {
+    width: 100%;
+    height: calc(100% - 80px);
+    display: flex;
+    overflow: hidden;
+}
+
+#left,
+#right {
+    width: 20%;
+    height: 100%;
+}
+
+.pick_char {
+    border: 2px solid rgb(72, 71, 71);
+    height: 12.5%;
+    background-color: rgb(85, 146, 244);
+    overflow: hidden;
+    position: relative;
+}
+
+.pick_char[picked="true"] {
+    background-color: #fff;
+}
+
+.pick_char img{
+    position: absolute;
+    top: -100px;
+    width: 70%;
+    min-width: 266px;
+}
+
+#left .pick_char img {
+    left: 0;
+}
+
+#right .pick_char img {
+    right: 0;
+}
+
+
+
+#mid {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ban {
+    position: relative;
+    height: 100px;
+    width: 90%;
+    background-color: rgb(41, 97, 188);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ban_left,
+.ban_right {
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+}
+
+.ban_left {
+    flex-direction: row-reverse;
+}
+
+.ban_char {
+    height: 90px;
+    width: 90px;
+    background-color: #fff;
+}
+
+.ban_char img {
+    width: 100%;
+}
+
+#list_char {
+    width: 90%;
+    max-width: 90%;
+    height: 620px;
+    background-color: #fff;
+    margin-top:40px;
+    /* overflow-x: hidden; */
+    overflow-y: scroll;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#list_char::-webkit-scrollbar
+{
+    width: 5px;
+}
+
+#list_char::-webkit-scrollbar-thumb
+{
+    background: #fff;
+    border-radius: 10px;
+}
+
+.character {
+    margin: 10px 10px;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+.character img {
+    width: 100%;
+    height: 100%;
+}
+
+.character:hover {
+    transform: scale(1.1);
+}
+
+.character[vision="Pyro"] {
+    background-color: var(--Pyro);
+}
+
+.character[vision="Dendro"] {
+    background-color: var(--Dendro);
+}
+
+.character[vision="Cryo"] {
+    background-color: var(--Cryo);
+}
+
+.character[vision="Anemo"] {
+    background-color: var(--Anemo);
+}
+
+.character[vision="Geo"] {
+    background-color: var(--Geo);
+}
+
+.character[vision="Electro"] {
+    background-color: var(--Electro);
+}
+
+.character[vision="Hydro"] {
+    background-color: var(--Hydro);
+}
+.character[vision="Unknown"] {
+    background-color: #ccc;
+}
+
+
+
+
+.ban_char img[vision="Pyro"] {
+    background-color: var(--Pyro);
+}
+
+.ban_char img[vision="Dendro"] {
+    background-color: var(--Dendro);
+}
+
+.ban_char img[vision="Cryo"] {
+    background-color: var(--Cryo);
+}
+
+.ban_char img[vision="Anemo"] {
+    background-color: var(--Anemo);
+}
+
+.ban_char img[vision="Geo"] {
+    background-color: var(--Geo);
+}
+
+.ban_char img[vision="Electro"] {
+    background-color: var(--Electro);
+}
+
+.ban_char img[vision="Hydro"] {
+    background-color: var(--Hydro);
+}
+.ban_char img[vision="Unknown"] {
+    background-color: #ccc;
+}
+
+.is_focus {
+    border: 5px solid #000;
+}
+
+.btn {
+    margin-top: 20px;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: rgb(41, 97, 188);
+    height: 50px;
+    width: 200px;
+    /* background-color: rgb(41, 97, 188); */
+    border: 2px solid rgb(41, 97, 188);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: rgb(41, 97, 188);
+}
